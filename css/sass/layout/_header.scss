@@ -1,0 +1,204 @@
+// start landing page
+.landing-page {
+  min-height: 100vh;
+  position: relative;
+  background-image: url(../../../imgs/01.jpg);
+  background-size: cover;
+  transition: background-image 1s;
+
+  .container {
+    position: relative;
+    z-index: 1000;
+  }
+
+  header {
+    position: relative;
+    z-index: 2;
+    color: $fff;
+    display: flex;
+    padding: 10px;
+
+    .container-links {
+      width: 100%;
+      text-align: right;
+
+
+      .toggle-menu {
+        background: none;
+        border: none;
+        width: 40px;
+        cursor: pointer;
+        margin-top: 15px;
+        display: none;
+        position: relative;
+
+        @include breakpoints(small) {
+          display: inline-block;
+        }
+
+        ;
+
+        &.menu-active::before {
+          content: '';
+          left: 10px;
+          bottom: -15px;
+          position: absolute;
+          border: 10px solid;
+          border-color: transparent transparent $fff transparent;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        span {
+          display: block;
+          height: 4px;
+          margin-bottom: 4px;
+          background-color: $fff;
+        }
+      }
+
+    }
+
+    .logo {
+      width: 300px;
+      padding: 15px;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style: none;
+      padding: 15px 0 0 0;
+
+      @include breakpoints(small) {
+        display: none;
+      }
+
+      ;
+
+      &.open {
+        background-color: $fff;
+        padding: 10px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 65px;
+        width: 100%;
+        border-radius: 4px;
+        text-align: left;
+
+        li {
+          display: block;
+          margin: 10px;
+
+          a {
+            color: $main-color;
+            font-weight: bold;
+          }
+        }
+      }
+
+      li {
+        display: inline-block;
+        margin-right: 10px;
+
+        a {
+          color: $fff;
+          text-decoration: none;
+          transition: .3s;
+
+          &:hover,
+          &.active {
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// end landing page
+
+
+////////////////////////////////////////////////////////////////
+// .toggle-menu {
+//   background-color: $main-color;
+//   border: none;
+//   padding: 8px;
+//   cursor: pointer;
+//   position: absolute;
+//   top: 20px;
+//   right: 15px;
+//   border-radius: 4px;
+//   display: none;
+//   outline: none;
+
+//   // @include breakpoints(mobile) {
+//   //   display: block;
+//   // }
+
+//   span {
+//     display: block;
+//     height: 3px;
+//     width: 50px;
+//     background-color: #fff;
+
+//     &:not(:last-child) {
+//       margin-bottom: 5px;
+//     }
+//   }
+// }
+
+
+/////////////////////////////////////////////////////////////////
+// // start burger icon
+
+// .toggle-menu {
+//   margin: 20px auto;
+//   width: 20px;
+//   height: 14px;
+//   cursor: pointer;
+//   position: relative;
+
+//   span {
+//     background-color: black;
+//     height: 2px;
+//     position: absolute;
+//     width: 100%;
+//     left: 0;
+//     transition: all .3s ease;
+
+//     &:first-child {
+//       top: 0;
+//     }
+
+//     &:nth-child(2) {
+//       top: 6px;
+//     }
+
+//     &:nth-child(3) {
+//       top: 12px;
+//     }
+//   }
+
+//   &:hover span:nth-child(2) {
+//     opacity: 0;
+//   }
+
+//   &:hover span:first-child,
+//   &:hover span:last-child {
+//     background-color: red;
+//     top: 6px;
+//   }
+
+//   &:hover span:first-child {
+//     transform: rotate(45deg);
+//   }
+
+//   &:hover span:last-child {
+//     transform: rotate(-45deg);
+//   }
+// }
+
+// // end burger icon

@@ -1,0 +1,93 @@
+///  flex centering 
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+// response
+
+@mixin breakpoints($point) {
+  @if $point ==mobile {
+    @media (max-width:767px) {
+      @content;
+    }
+  }
+
+  @else if $point ==xs {
+    @media (max-width:575px) {
+      @content;
+    }
+  }
+
+  @else if $point ==only-mobile {
+    @media (min-width:575px) and (max-width:767px) {
+      @content;
+    }
+  }
+
+  @else if $point ==small {
+    @media (max-width:991px) {
+      @content;
+    }
+  }
+
+  @else if $point ==only-small {
+    @media ((min-width:768px) and (max-width:991px)) {
+      @content;
+    }
+  }
+
+  @else if $point ==medium {
+    @media (max-width:1199px) {
+      @content;
+    }
+  }
+
+  @else if $point ==only-medium {
+    @media ((min-width:992px) and (max-width:1199px)) {
+      @content;
+    }
+  }
+
+  @else if $point ==large {
+    @media (min-width:1200px) {
+      @content;
+    }
+  }
+}
+
+
+// translate centring
+
+
+$top: false !default;
+$left: false !default;
+
+
+@mixin centerTranslate($top: null, $left: null, $translate...) {
+  position: absolute;
+
+  @if $top !=null {
+    top: $top;
+  }
+
+  @if $left !=null {
+    left: $left;
+  }
+
+  transform: translate($translate);
+  @content
+}
+
+////////////////////////////////////////////////////
+
+@mixin textHeader {
+  font-weight: bold;
+  font-size: 30px;
+  color: $main-color;
+  margin: 0 0 50px;
+  text-align: center;
+}

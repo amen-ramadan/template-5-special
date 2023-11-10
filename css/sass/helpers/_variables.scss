@@ -1,0 +1,14 @@
+$fff: #fff;
+$color-1: #ff9800;
+$color-2: #e91e63;
+$color-3: #009688;
+$color-4: #03a9f4;
+$color-5: #4caf50;
+
+
+
+:root {
+  --main-color: #ff9800;
+}
+
+$main-color : var(--main-color);
